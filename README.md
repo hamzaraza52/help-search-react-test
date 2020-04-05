@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Help Search React test 
+
+## Context
+
+This app will alow the user to enter in the search bar and clicks the search button this will query the search api and return the first 10 results. 
+
+## Future Work
+
+If more time was given, functionality such as multiple search pages and the ability to browser back to previous query would be added. As well as improved search functionality such as error states, autocomplete and improved styling.
 
 ## Available Scripts
 

@@ -1,24 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
+const APIURL = "https://help-search-api-prod.herokuapp.com/search?query="
+
 function App() {
+  const [searchTerm, setSearchTerm] = useState('')
+  const [results, setResults] = useState([])
+  const [search, setSearch] = useState('')
+  const searchURL = `${APIURL}+${search}`
+
+  useEffect(() => {
+    async function fetchData() {
+      return await fetch(searchURL)
+        .then(res => res.json())
+        .then(res => {
+          const data = res.results
+          // TODO: return multiple pages
+          return setResults(data.slice(0, 10))
+        })
+
+    }
+    fetchData();
+  }, [searchURL]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>How can we help?</h1>
+      <input
+        value={searchTerm}
+        onChange={e => setSearchTerm(e.target.value)}
+        type="text" className="c-input" placeholder="Search..." />
+      <button
+        // TODO: return results on enter as well as on click
+        className="c-button" onClick={() => setSearch(searchTerm)}   >Search</button>
+      {results ? (
+        <ul className="c-list">
+          {results.map(item => (
+            <li
+              className="c-list"
+              key={item.objectID}>
+              <a className="c-link"
+                href={item.url}>{item.title}</a>
+              <p className="c-description">{item.description}</p>
+            </li>
+          ))}
+        </ul>) : null
+      }
     </div>
   );
 }
