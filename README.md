@@ -2,7 +2,7 @@
 
 ## Context
 
-This app will alow the user to enter in the search bar and clicks the search button this will query the search api and return the first 10 results. 
+This app will allow the user to enter in the search bar and clicks the search button this will query the search api and return the first 10 results. 
 
 ## Future Work
 
