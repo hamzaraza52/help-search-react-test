@@ -6,7 +6,7 @@ This app will allow the user to enter in the search bar and clicks the search bu
 
 ## Future Work
 
-If more time was given, functionality such as multiple search pages and the ability to browser back to previous query would be added. As well as improved search functionality such as error states, autocomplete and improved styling.
+If more time was given, functionality such as multiple search pages and the ability to browser back to previous query would be added. As well as improved search functionality such as error states, autocomplete and improved styling. Styling would be improved as well. 
 
 ## Available Scripts
 
