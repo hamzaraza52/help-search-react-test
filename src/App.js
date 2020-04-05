@@ -37,7 +37,7 @@ function App() {
           {results.map(item => (
             <li
               className="c-list"
-              key={item.objectID}>
+              key={item.title}>
               <a className="c-link"
                 href={item.url}>{item.title}</a>
               <p className="c-description">{item.description}</p>
